@@ -1,5 +1,0 @@
-[requires]
-particle-common/snapshot@jw3/stable
-
-[generators]
-cmake

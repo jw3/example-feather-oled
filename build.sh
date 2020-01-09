@@ -17,7 +17,20 @@ fi
 
 if [ ! -d "$builddir" ]; then mkdir "$builddir"; fi
 
-conan install . -if="$builddir" -s compiler.version="$compiler_major_version"
-cd "$builddir"
-cmake .. ${cmake_args[@]}
-make -j1
+build() {
+  conan install . -if="$builddir" -s compiler.version="$compiler_major_version"
+  cd "$builddir"
+  cmake .. ${cmake_args[@]}
+  make -j1
+}
+
+package() {
+  readonly conanpath="${CONAN_PATH:-${sourcedir}}"
+  readonly conanuser="${CONAN_USER:-jw3}"
+  readonly conanchannel="${CONAN_CHANNEL:-stable}"
+
+  export FW_SRC_DIR="."
+  conan export-pkg . "$conanuser/$conanchannel" -s compiler.version="$compiler_major_version" -sf src -f
+}
+
+build "$@"
