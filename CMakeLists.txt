@@ -29,6 +29,5 @@ conan_basic_setup(NO_OUTPUT_DIRS)
 set(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake ${CONAN_CMAKE_MODULE_PATH} ${CMAKE_MODULE_PATH})
 
 find_package(Particle)
-include_directories(${CMAKE_SOURCE_DIR}/include)
 
 add_particle_remote_app(src)
