@@ -11,3 +11,5 @@ simple status view with the feather oled
 
 ### resources
 - https://rickkas7.github.io/DisplayGenerator/
+- https://github.com/rickkas7/Adafruit_SSD1306_RK
+- https://community.particle.io/t/problem-with-xenon-featherwing-oled/50008
