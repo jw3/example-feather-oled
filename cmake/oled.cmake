@@ -1,5 +1,4 @@
-set(oled ${CONAN_EXAMPLEOLED_ROOT})
-include(MQTT)
+set(oled ${CONAN_FEATHER-OLED_ROOT})
 
 file(GLOB SOURCE_FILES ${oled}/src/*)
 
